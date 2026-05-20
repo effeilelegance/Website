@@ -1,5 +1,8 @@
 import { motion } from "framer-motion";
 import { Phone, MessageCircle, Clock, ShieldCheck, Plane, BriefcaseBusiness, MapPin, Sparkles, Leaf, Star, ChevronRight } from "lucide-react";
+import brandImage from "./assets/favicon-vtc.png";
+import vehicleFrontImage from "./assets/car-front.png";
+import vehicleProfileImage from "./assets/car-profile.png";
 
 const PHONE_DISPLAY = "06 59 53 34 24";
 const PHONE_TEL = "+33659533424";
@@ -32,84 +35,41 @@ const advantages = [
   "Service prestige"
 ];
 
-function EiffelTower() {
+function MainImage() {
   return (
-    <svg viewBox="0 0 180 280" className="h-full w-full" aria-hidden="true">
-      <defs>
-        <linearGradient id="goldTower" x1="0" x2="1" y1="0" y2="1">
-          <stop offset="0%" stopColor="#fff1b8" />
-          <stop offset="45%" stopColor="#c79b45" />
-          <stop offset="100%" stopColor="#7a561b" />
-        </linearGradient>
-      </defs>
-      <path d="M89 10 L92 10 L95 40 L85 40 Z" fill="url(#goldTower)" opacity="0.95" />
-      <path d="M82 45 H98 L108 100 H72 Z" fill="none" stroke="url(#goldTower)" strokeWidth="4" />
-      <path d="M68 108 H112" stroke="url(#goldTower)" strokeWidth="6" strokeLinecap="round" />
-      <path d="M70 120 L42 260 M110 120 L138 260" stroke="url(#goldTower)" strokeWidth="7" strokeLinecap="round" />
-      <path d="M56 186 H124" stroke="url(#goldTower)" strokeWidth="7" strokeLinecap="round" />
-      <path d="M38 260 H142" stroke="url(#goldTower)" strokeWidth="8" strokeLinecap="round" />
-      <path d="M58 260 C70 228 110 228 122 260" fill="none" stroke="url(#goldTower)" strokeWidth="5" />
-      {[62, 74, 86, 98, 110].map((x, i) => (
-        <path key={i} d={`M${x} 58 L${118 - x} 250`} stroke="#d9b35d" strokeWidth="1.2" opacity="0.65" />
-      ))}
-      <path d="M76 48 L104 100 M104 48 L76 100 M68 125 L112 184 M112 125 L68 184 M52 190 L128 255 M128 190 L52 255" stroke="#f7dda0" strokeWidth="1.4" opacity="0.75" />
-    </svg>
+    <div className="relative mx-auto aspect-square w-full max-w-[560px] overflow-hidden rounded-[2rem] border border-[#c9a24a]/25 bg-black/55 p-5 shadow-2xl shadow-black/60">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(214,177,89,0.22),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.06),transparent_55%)]" />
+      <img
+        src={brandImage}
+        alt="Eiffel Élégance VTC Prestige"
+        className="relative z-10 h-full w-full rounded-[1.5rem] object-cover"
+        loading="eager"
+      />
+    </div>
   );
 }
 
-function ChauffeurCarScene() {
+function VehicleImageHover() {
   return (
-    <div className="relative mx-auto h-[420px] w-full max-w-[650px] overflow-hidden rounded-[2rem] border border-[#c9a24a]/25 bg-black/40 shadow-2xl shadow-black/60">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_30%,rgba(214,177,89,0.22),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.05),transparent_50%)]" />
-      <div className="absolute right-10 top-6 h-72 w-44 opacity-90">
-        <EiffelTower />
+    <div className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#121212] to-black p-4 shadow-2xl shadow-black/45">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(214,177,89,0.2),transparent_42%)]" />
+      <div className="relative aspect-[1672/941] min-h-[260px] overflow-hidden rounded-[1.5rem] bg-black">
+        <img
+          src={vehicleProfileImage}
+          alt="Hyundai Ioniq Electric 2021 vue de profil"
+          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.02] group-hover:opacity-0"
+        />
+        <img
+          src={vehicleFrontImage}
+          alt="Hyundai Ioniq Electric 2021 vue de face"
+          className="absolute inset-0 h-full w-full object-cover opacity-0 transition duration-500 group-hover:scale-[1.02] group-hover:opacity-100"
+        />
       </div>
-      <div className="absolute left-10 top-24 h-64 w-28">
-        <div className="absolute left-6 top-0 h-14 w-14 rounded-full border border-[#d6b159] bg-black shadow-[0_0_25px_rgba(214,177,89,0.3)]" />
-        <div className="absolute left-0 top-2 h-6 w-20 -rotate-6 rounded-[50%] border border-[#d6b159] bg-black" />
-        <div className="absolute left-11 top-[4.5rem] h-20 w-[2px] bg-[#f5e1a7]" />
-        <div className="absolute left-5 top-16 h-36 w-20 rounded-t-[2rem] border border-[#d6b159] bg-black" />
-        <div className="absolute left-7 top-[6.25rem] h-24 w-[1px] bg-[#d6b159]/70" />
-        <div className="absolute left-14 top-[6.25rem] h-24 w-[1px] bg-[#d6b159]/50" />
-        <div className="absolute left-4 top-52 h-20 w-5 rounded-b-full border border-[#d6b159] bg-black" />
-        <div className="absolute left-[4.5rem] top-52 h-20 w-5 rounded-b-full border border-[#d6b159] bg-black" />
-        <div className="absolute left-7 top-24 h-4 w-14 bg-white/95" />
-        <div className="absolute left-10 top-24 h-20 w-3 bg-black" />
-        <div className="absolute left-7 top-[9.25rem] h-3 w-10 bg-[#d6b159]" />
+      <div className="relative z-10 mt-5 flex flex-wrap gap-3 text-sm text-white/60">
+        <span className="rounded-full border border-[#d6b159]/30 px-4 py-2">Berline électrique</span>
+        <span className="rounded-full border border-[#d6b159]/30 px-4 py-2">Paris et Île de France</span>
+        <span className="rounded-full border border-[#d6b159]/30 px-4 py-2">Service privé</span>
       </div>
-      <svg viewBox="0 0 720 330" className="absolute bottom-2 left-1/2 h-[260px] w-[620px] -translate-x-[42%]" aria-label="Silhouette d’une Hyundai Ioniq Electric 2021">
-        <defs>
-          <linearGradient id="carGold" x1="0" x2="1">
-            <stop offset="0" stopColor="#fff3c4" />
-            <stop offset="0.5" stopColor="#d6b159" />
-            <stop offset="1" stopColor="#8b6424" />
-          </linearGradient>
-        </defs>
-        <path d="M70 205 C105 145 168 117 245 115 H390 C475 116 545 148 615 205 C642 226 653 250 646 271 H70 C52 252 51 229 70 205 Z" fill="#070707" stroke="url(#carGold)" strokeWidth="5" />
-        <path d="M170 116 C198 72 242 55 315 55 H374 C419 58 454 80 492 126" fill="none" stroke="#f2d48b" strokeWidth="5" strokeLinecap="round" />
-        <path d="M206 117 C230 82 263 70 320 70 H370 C395 73 420 88 447 122" fill="rgba(255,255,255,0.08)" stroke="#d6b159" strokeWidth="3" />
-        <path d="M91 214 C125 205 165 199 210 202" stroke="#f4e1ae" strokeWidth="4" strokeLinecap="round" />
-        <path d="M478 197 H598 C612 197 622 206 625 220 H498 C487 218 477 210 478 197 Z" fill="#fff7db" opacity="0.9" />
-        <path d="M500 226 H645" stroke="#d6b159" strokeWidth="4" strokeLinecap="round" />
-        <path d="M235 200 H455" stroke="#d6b159" strokeWidth="3" opacity="0.85" />
-        <path d="M158 146 H220 M456 145 H524" stroke="#f8e7b9" strokeWidth="3" strokeLinecap="round" opacity="0.8" />
-        <circle cx="205" cy="269" r="43" fill="#030303" stroke="#f1d78d" strokeWidth="5" />
-        <circle cx="205" cy="269" r="22" fill="none" stroke="#cfa34f" strokeWidth="3" />
-        <circle cx="537" cy="269" r="43" fill="#030303" stroke="#f1d78d" strokeWidth="5" />
-        <circle cx="537" cy="269" r="22" fill="none" stroke="#cfa34f" strokeWidth="3" />
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((r) => (
-          <g key={r} transform={`rotate(${r} 205 269)`}>
-            <path d="M205 247 L205 225" stroke="#d6b159" strokeWidth="2" />
-          </g>
-        ))}
-        {[0, 45, 90, 135, 180, 225, 270, 315].map((r) => (
-          <g key={r} transform={`rotate(${r} 537 269)`}>
-            <path d="M537 247 L537 225" stroke="#d6b159" strokeWidth="2" />
-          </g>
-        ))}
-        <path d="M620 239 C642 239 655 246 661 259" stroke="#f5e6bd" strokeWidth="4" strokeLinecap="round" />
-      </svg>
-      <div className="absolute bottom-7 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[#d6b159] to-transparent" />
     </div>
   );
 }
@@ -121,8 +81,8 @@ function App() {
       <div className="relative z-10">
         <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
           <a href="#accueil" className="group flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#d6b159]/60 bg-black text-xl font-serif text-[#f6dfa2] shadow-[0_0_25px_rgba(214,177,89,0.25)]">
-              EE
+            <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-[#d6b159]/60 bg-black shadow-[0_0_25px_rgba(214,177,89,0.25)]">
+              <img src={brandImage} alt="" className="h-full w-full object-cover" />
             </div>
             <div>
               <p className="font-serif text-xl tracking-[0.18em] text-[#f6dfa2]">Eiffel Élégance</p>
@@ -178,7 +138,7 @@ function App() {
             </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, delay: 0.1 }}>
-            <ChauffeurCarScene />
+            <MainImage />
           </motion.div>
         </section>
 
@@ -234,28 +194,7 @@ function App() {
               ))}
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#121212] to-black p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(214,177,89,0.22),transparent_40%)]" />
-            <div className="relative z-10 flex h-full min-h-[360px] flex-col justify-end">
-              <svg viewBox="0 0 760 260" className="w-full" aria-label="Profil stylisé Hyundai Ioniq Electric 2021">
-                <path d="M72 168 C118 104 190 74 302 73 H438 C540 76 614 105 694 169 C715 185 727 209 722 225 H55 C44 205 48 184 72 168 Z" fill="#060606" stroke="#d6b159" strokeWidth="5" />
-                <path d="M200 75 C235 34 283 20 360 20 H430 C480 24 520 47 563 86" fill="none" stroke="#f6dfa2" strokeWidth="5" strokeLinecap="round" />
-                <path d="M230 78 C260 45 302 35 365 35 H427 C455 38 485 53 520 87" fill="rgba(255,255,255,0.08)" stroke="#d6b159" strokeWidth="3" />
-                <path d="M95 176 C135 165 184 160 238 163" stroke="#f6dfa2" strokeWidth="4" strokeLinecap="round" />
-                <path d="M555 157 H695 C704 157 710 164 713 176 H575 C564 176 555 168 555 157 Z" fill="#f6dfa2" opacity="0.95" />
-                <path d="M238 164 H535" stroke="#d6b159" strokeWidth="3" />
-                <circle cx="210" cy="224" r="38" fill="#030303" stroke="#f6dfa2" strokeWidth="5" />
-                <circle cx="210" cy="224" r="18" fill="none" stroke="#d6b159" strokeWidth="3" />
-                <circle cx="585" cy="224" r="38" fill="#030303" stroke="#f6dfa2" strokeWidth="5" />
-                <circle cx="585" cy="224" r="18" fill="none" stroke="#d6b159" strokeWidth="3" />
-              </svg>
-              <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/60">
-                <span className="rounded-full border border-[#d6b159]/30 px-4 py-2">Berline électrique</span>
-                <span className="rounded-full border border-[#d6b159]/30 px-4 py-2">Paris et Île de France</span>
-                <span className="rounded-full border border-[#d6b159]/30 px-4 py-2">Service privé</span>
-              </div>
-            </div>
-          </div>
+          <VehicleImageHover />
         </section>
 
         <section id="reservation" className="px-6 pb-28 lg:px-8">
