@@ -1,0 +1,24 @@
+{
+  "name": "Eiffel Élégance",
+  "short_name": "Eiffel Élégance",
+  "description": "Chauffeur privé VTC prestige à Paris et en Île-de-France.",
+  "start_url": "/Website/",
+  "scope": "/Website/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "/Website/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/Website/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
