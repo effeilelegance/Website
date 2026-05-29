@@ -56,6 +56,11 @@ body {
     @apply bg-gradient-to-r from-gold-100 via-gold-300 to-gold-500 bg-clip-text text-transparent;
   }
 
+  /* Dégradé texte bleu-nuit -> or */
+  .text-night-gradient {
+    @apply bg-gradient-to-r from-night-200 via-gold-200 to-gold-400 bg-clip-text text-transparent;
+  }
+
   /* Section eyebrow label */
   .eyebrow {
     @apply text-sm uppercase tracking-luxe text-gold-400;
@@ -66,9 +71,61 @@ body {
     @apply h-px w-full bg-gold-line;
   }
 
-  /* Reusable luxe card */
+  /* ===== Liquid glass =====
+     Le flou est appliqué via les utilitaires Tailwind backdrop-blur/saturate :
+     ils génèrent backdrop-filter ET -webkit-backdrop-filter de façon fiable
+     (Safari exige le préfixe -webkit-), et survivent à la minification. */
+
+  /* Surface en verre liquide claire (jour / VTC) */
+  .glass {
+    @apply rounded-[2rem] backdrop-blur-xl backdrop-saturate-150;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 18px 40px -20px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  /* Surface en verre liquide nuit (bleu nuit + reflet doré) */
+  .glass-night {
+    @apply rounded-[2rem] backdrop-blur-xl backdrop-saturate-150;
+    background: linear-gradient(135deg, rgba(159, 176, 240, 0.1), rgba(11, 16, 38, 0.42));
+    border: 1px solid rgba(214, 177, 89, 0.2);
+    box-shadow:
+      0 18px 44px -20px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 rgba(246, 223, 162, 0.18),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  /* Pastille / badge en verre liquide */
+  .glass-pill {
+    @apply rounded-full backdrop-blur-lg backdrop-saturate-150;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+
+  /* Carte VTC : verre liquide clair */
   .luxe-card {
-    @apply rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.025] shadow-card;
+    @apply rounded-[2rem] backdrop-blur-xl backdrop-saturate-150;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.025));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 18px 40px -20px rgba(0, 0, 0, 0.7),
+      inset 0 1px 0 rgba(255, 255, 255, 0.25),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  /* Carte nuit : verre liquide bleu nuit + reflet doré */
+  .night-card {
+    @apply rounded-[2rem] backdrop-blur-xl backdrop-saturate-150;
+    background: linear-gradient(135deg, rgba(159, 176, 240, 0.1), rgba(11, 16, 38, 0.42));
+    border: 1px solid rgba(214, 177, 89, 0.2);
+    box-shadow:
+      0 18px 44px -20px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 rgba(246, 223, 162, 0.18),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.3);
   }
 
   /* Primary gold button */
@@ -76,20 +133,16 @@ body {
     @apply inline-flex items-center justify-center gap-3 rounded-full bg-gold-400 px-7 py-4 font-semibold text-black shadow-glow transition hover:bg-gold-200;
   }
 
-  /* Ghost button */
+  /* Ghost button = verre liquide */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-3 rounded-full border border-white/[0.15] bg-white/[0.04] px-7 py-4 font-semibold text-white backdrop-blur transition hover:border-gold-400/70 hover:text-gold-100;
+    @apply inline-flex items-center justify-center gap-3 rounded-full px-7 py-4 font-semibold text-white backdrop-blur-lg backdrop-saturate-150 transition;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
   }
-
-  /* --- Paris by Night --- */
-  /* Carte nuit translucide */
-  .night-card {
-    @apply rounded-[2rem] border border-night-400/20 bg-midnight-800/60 shadow-card backdrop-blur-sm;
-  }
-
-  /* Dégradé texte bleu-nuit -> or */
-  .text-night-gradient {
-    @apply bg-gradient-to-r from-night-200 via-gold-200 to-gold-400 bg-clip-text text-transparent;
+  .btn-ghost:hover {
+    border-color: rgba(214, 177, 89, 0.7);
+    @apply text-gold-100;
   }
 
   /* Pastille de pas d'itinéraire */

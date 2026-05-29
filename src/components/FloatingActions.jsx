@@ -46,7 +46,7 @@ export default function FloatingActions() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full border border-gold-400/40 bg-ink-800 text-gold-100 shadow-glow transition-colors hover:bg-ink-700"
+            className="fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full border border-gold-400/40 bg-ink-800/70 text-gold-100 shadow-glow ring-1 ring-inset ring-white/10 backdrop-blur-xl transition-colors hover:bg-ink-700/80"
           >
             <ArrowUp className="h-5 w-5" aria-hidden="true" />
           </motion.button>

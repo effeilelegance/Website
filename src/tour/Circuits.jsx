@@ -28,7 +28,7 @@ export default function Circuits() {
       <motion.div
         variants={staggerContainer}
         {...revealOnScroll}
-        className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14"
+        className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 items-stretch"
       >
         {CIRCUITS.map((circuit) => {
           const featured = Boolean(circuit.badge);
@@ -39,14 +39,14 @@ export default function Circuits() {
               variants={fadeUp}
               whileHover={{ y: -6 }}
               className={cn(
-                "night-card p-6 flex flex-col relative transition-colors",
+                "night-card p-6 pt-7 flex flex-col relative transition-colors",
                 featured
-                  ? "border-gold-400/50 lg:scale-105 animate-glow-pulse"
+                  ? "border-gold-400/60 shadow-glow ring-1 ring-inset ring-gold-400/30"
                   : "hover:border-gold-400/40"
               )}
             >
               {circuit.badge && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold-400 text-black text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold-400 px-3 py-1 text-xs font-semibold text-black shadow-glow-sm">
                   {circuit.badge}
                 </span>
               )}

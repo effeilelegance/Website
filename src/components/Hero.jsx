@@ -7,6 +7,7 @@ import {
   Leaf,
   Star,
   ChevronRight,
+  Moon,
 } from "lucide-react";
 import { CONTACT } from "../data/content";
 import brand from "../assets/favicon-vtc.png";
@@ -41,7 +42,7 @@ export default function Hero() {
         >
           <motion.span
             variants={fadeUp}
-            className="eyebrow inline-flex items-center gap-2 rounded-full border border-gold-400/40 bg-white/5 px-4 py-2 text-gold-100 backdrop-blur"
+            className="eyebrow glass-pill inline-flex items-center gap-2 border-gold-400/40 px-4 py-2 text-gold-100"
           >
             <Star className="h-4 w-4 fill-gold-400 text-gold-400" aria-hidden="true" />
             Chauffeur privé haut de gamme à Paris
@@ -94,6 +95,23 @@ export default function Hero() {
             </a>
           </motion.div>
 
+          {/* Bascule vers l'expérience Paris by Night */}
+          <motion.a
+            variants={fadeUp}
+            href="./"
+            aria-label="Découvrir nos tours Paris by Night"
+            className="glass-pill group mt-5 inline-flex items-center gap-3 border-night-400/50 px-5 py-3 text-night-100 transition-colors hover:border-night-300 hover:text-white"
+          >
+            <Moon className="h-5 w-5 text-gold-300" aria-hidden="true" />
+            <span className="font-medium">
+              Nouveau&nbsp;: nos tours <span className="text-gold-200">Paris by Night</span>
+            </span>
+            <ChevronRight
+              className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </motion.a>
+
           {/* Mini-cartes trust */}
           <motion.ul
             variants={fadeUp}
@@ -144,8 +162,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Badge flottant verre dépoli */}
-          <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-2xl border border-gold-400/40 bg-white/10 px-4 py-3 backdrop-blur-md shadow-glow">
+          {/* Badge flottant verre liquide */}
+          <div className="absolute bottom-5 left-5 flex items-center gap-2 rounded-2xl border border-gold-400/40 bg-white/10 px-4 py-3 shadow-glow ring-1 ring-inset ring-white/20 backdrop-blur-xl">
             <Star className="h-5 w-5 fill-gold-400 text-gold-400" aria-hidden="true" />
             <div className="leading-tight">
               <p className="font-serif text-lg text-gold-100">4.9/5 ★</p>
