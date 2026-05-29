@@ -10,9 +10,9 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="Eiffel Élégance — chauffeur privé VTC prestige à Paris et en Île-de-France. Transferts aéroports (CDG, Orly, Beauvais), déplacements professionnels, événements. Berline 100% électrique, service ponctuel et discret."
+      content="Eiffel Élégance — Paris by Night : tours privés des monuments illuminés en berline électrique. Tour Eiffel, Arc de Triomphe, Louvre, Champs-Élysées… arrêts photo à chaque monument avec chauffeur-guide."
     />
-    <meta name="keywords" content="VTC Paris, chauffeur privé, transfert aéroport CDG, Orly, Beauvais, berline électrique, VTC prestige, Île-de-France" />
+    <meta name="keywords" content="tour Paris by night, visite Paris nuit, monuments illuminés, tour privé Paris, chauffeur guide, Tour Eiffel nuit, balade nocturne Paris" />
     <meta name="author" content="Eiffel Élégance" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://effeilelegance.github.io/Website/" />
@@ -21,56 +21,47 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Eiffel Élégance" />
-    <meta property="og:title" content="Eiffel Élégance | VTC Prestige à Paris" />
-    <meta property="og:description" content="Chauffeur privé haut de gamme à Paris et en Île-de-France. Berline 100% électrique, ponctuel et discret." />
+    <meta property="og:title" content="Eiffel Élégance | Paris by Night — Tours privés des monuments illuminés" />
+    <meta property="og:description" content="Découvrez Paris la nuit : tour privé des monuments illuminés en berline électrique, avec arrêts photo et chauffeur-guide." />
     <meta property="og:url" content="https://effeilelegance.github.io/Website/" />
     <meta property="og:image" content="https://effeilelegance.github.io/Website/icon-512.png" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Eiffel Élégance | VTC Prestige à Paris" />
-    <meta name="twitter:description" content="Chauffeur privé haut de gamme à Paris et en Île-de-France. Berline 100% électrique." />
+    <meta name="twitter:title" content="Eiffel Élégance | Paris by Night" />
+    <meta name="twitter:description" content="Tour privé des monuments illuminés de Paris en berline électrique, arrêts photo et chauffeur-guide." />
     <meta name="twitter:image" content="https://effeilelegance.github.io/Website/icon-512.png" />
 
     <meta name="apple-mobile-web-app-title" content="Eiffel Élégance" />
     <meta name="application-name" content="Eiffel Élégance" />
-    <meta name="theme-color" content="#050505" />
-    <title>Eiffel Élégance | VTC Prestige Paris &amp; Île-de-France</title>
+    <meta name="theme-color" content="#05060f" />
+    <title>Eiffel Élégance | Paris by Night — Tours privés illuminés</title>
 
-    <!-- Données structurées : entreprise locale -->
+    <!-- Données structurées : circuit touristique -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "TaxiService",
-        "name": "Eiffel Élégance",
-        "description": "Chauffeur privé VTC prestige à Paris et en Île-de-France. Berline 100% électrique.",
-        "telephone": "+33659533424",
-        "areaServed": "Paris et Île-de-France",
-        "url": "https://effeilelegance.github.io/Website/",
-        "image": "https://effeilelegance.github.io/Website/icon-512.png",
-        "priceRange": "€€",
+        "@type": "TouristTrip",
+        "name": "Paris by Night — Tour privé des monuments illuminés",
+        "description": "Tour privé nocturne des monuments illuminés de Paris en berline électrique, avec arrêts photo et chauffeur-guide.",
+        "touristType": "Couples, familles, groupes privés",
         "provider": {
           "@type": "LocalBusiness",
           "name": "Eiffel Élégance",
           "telephone": "+33659533424",
+          "areaServed": "Paris",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Paris",
             "addressRegion": "Île-de-France",
             "addressCountry": "FR"
           }
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-          "opens": "00:00",
-          "closes": "23:59"
         }
       }
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/tour-main.jsx"></script>
   </body>
 </html>

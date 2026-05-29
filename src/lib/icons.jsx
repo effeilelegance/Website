@@ -16,6 +16,11 @@ import {
   Star,
   MapPin,
   Car,
+  Camera,
+  Languages,
+  GlassWater,
+  Users,
+  Moon,
 } from "lucide-react";
 
 const REGISTRY = {
@@ -34,6 +39,11 @@ const REGISTRY = {
   Star,
   MapPin,
   Car,
+  Camera,
+  Languages,
+  GlassWater,
+  Users,
+  Moon,
 };
 
 export function Icon({ name, ...props }) {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CONTACT, NAV_LINKS } from "../data/content";
 import brand from "../assets/favicon-vtc.png";
-import { Phone, MessageCircle, Menu, X } from "lucide-react";
+import { Phone, MessageCircle, Menu, X, Moon } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 
 export default function Navbar() {
@@ -85,6 +85,14 @@ export default function Navbar() {
 
         {/* CTA desktop + hamburger mobile */}
         <div className="flex items-center gap-3">
+          {/* Bascule vers le mode Paris by Night (page principale) */}
+          <a
+            href="./"
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-gold-400/50 px-4 py-2 text-sm text-gold-100 transition-colors hover:bg-gold-400 hover:text-black"
+          >
+            <Moon className="h-4 w-4" aria-hidden="true" />
+            <span>Paris by Night</span>
+          </a>
           <a
             href={`tel:${CONTACT.phoneTel}`}
             className="hidden md:inline-flex btn-ghost items-center gap-2 px-4 py-2 text-sm"
@@ -175,6 +183,14 @@ export default function Navbar() {
                 >
                   <MessageCircle className="h-5 w-5" aria-hidden="true" />
                   <span>WhatsApp</span>
+                </a>
+                <a
+                  href="./"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-full border border-gold-400/50 px-4 py-3 text-gold-100 transition-colors hover:bg-gold-400 hover:text-black"
+                >
+                  <Moon className="h-5 w-5" aria-hidden="true" />
+                  <span>Paris by Night</span>
                 </a>
               </motion.div>
             </nav>

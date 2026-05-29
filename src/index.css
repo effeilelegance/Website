@@ -80,6 +80,22 @@ body {
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-3 rounded-full border border-white/[0.15] bg-white/[0.04] px-7 py-4 font-semibold text-white backdrop-blur transition hover:border-gold-400/70 hover:text-gold-100;
   }
+
+  /* --- Paris by Night --- */
+  /* Carte nuit translucide */
+  .night-card {
+    @apply rounded-[2rem] border border-night-400/20 bg-midnight-800/60 shadow-card backdrop-blur-sm;
+  }
+
+  /* Dégradé texte bleu-nuit -> or */
+  .text-night-gradient {
+    @apply bg-gradient-to-r from-night-200 via-gold-200 to-gold-400 bg-clip-text text-transparent;
+  }
+
+  /* Pastille de pas d'itinéraire */
+  .stop-dot {
+    @apply flex h-12 w-12 items-center justify-center rounded-full border border-gold-400/50 bg-midnight-900 text-gold-100 shadow-glow-sm;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
