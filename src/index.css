@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Cormorant+Garamond:wght@500;600&family=Inter:wght@300;400;500;600&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,8 +23,72 @@ body {
   min-width: 320px;
   margin: 0;
   background: #050505;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
+}
+
+::selection {
+  background: rgba(214, 177, 89, 0.3);
+  color: #fbf3da;
+}
+
+/* Luxe scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c9a24a, #7c602a);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d6b159;
+}
+
+@layer components {
+  /* Gold gradient text */
+  .text-gold-gradient {
+    @apply bg-gradient-to-r from-gold-100 via-gold-300 to-gold-500 bg-clip-text text-transparent;
+  }
+
+  /* Section eyebrow label */
+  .eyebrow {
+    @apply text-sm uppercase tracking-luxe text-gold-400;
+  }
+
+  /* Shimmering gold divider */
+  .gold-divider {
+    @apply h-px w-full bg-gold-line;
+  }
+
+  /* Reusable luxe card */
+  .luxe-card {
+    @apply rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.025] shadow-card;
+  }
+
+  /* Primary gold button */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-3 rounded-full bg-gold-400 px-7 py-4 font-semibold text-black shadow-glow transition hover:bg-gold-200;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-3 rounded-full border border-white/[0.15] bg-white/[0.04] px-7 py-4 font-semibold text-white backdrop-blur transition hover:border-gold-400/70 hover:text-gold-100;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
